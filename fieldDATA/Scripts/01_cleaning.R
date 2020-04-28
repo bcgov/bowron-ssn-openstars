@@ -22,6 +22,7 @@ library(lubridate)
 #### Import Metadata of Field Sites #### 
 
   metadf <- readxl::read_excel("fieldDATA/Data/bowron_2019/2019 plot card data.xlsx", col_names = T)
+  metadf <- read.csv("fieldDATA/Data/bowron_2019/2019 plot card data_UTM10.csv")
   metadf <- metadf %>% mutate(ShortName = toupper(ShortName))
   
 #### Clean and Summarise h2o Temperatures #### 
@@ -89,10 +90,10 @@ library(lubridate)
   
   
   metadf_h2o <- merge(metadf, h2o_df, by.x = "ShortName", by.y = "Site") %>%
-      select(ShortName, contains("WGS84"), contains("h2o"))
+      select(ShortName, Northing, Easting, contains("h2o"))
     
-  metadf_h2o_sf <- st_as_sf(metadf_h2o, coords = c("Location (WGS84) Lon", "Location (WGS84) Lat"), crs = 4326, agr = "constant")
-
+  metadf_h2o_sf <- st_as_sf(metadf_h2o, coords = c("Easting", "Northing"), crs = 32610, agr = "constant")
+  
     
 #### Clean and Summarise Temp/Rh Temperatures #### 
   
@@ -165,10 +166,10 @@ library(lubridate)
   
   
   metadf_rh <- merge(x = metadf, y = Trh_df, by.x = "ShortName", by.y = "Site") %>%
-    select(ShortName, contains("WGS84"), contains("Tm"), contains("RHm"))
+    select(ShortName, Northing, Easting, contains("h2o"))
   
-  metadf_rh_sf <- st_as_sf(metadf_rh, coords = c("Location (WGS84) Lon", "Location (WGS84) Lat"), crs = 4326, agr = "constant")
-
+  metadf_rh_sf <- st_as_sf(metadf_rh, coords = c("Easting", "Northing"), crs = 32610, agr = "constant")
+  
   
 ##### MERGE H2O and TEMP RH ####
   
