@@ -5,7 +5,7 @@ output:
     variant: markdown_github
 ---
 
-```{r}
+```{r, include=TRUE, echo = FALSE}
 knitr::opts_chunk$set(include=TRUE, echo = FALSE)
 ```
 
