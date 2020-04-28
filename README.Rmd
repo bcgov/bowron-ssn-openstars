@@ -1,7 +1,6 @@
 ---
 output:
-  html_document:
-    keep_md: yes
+  md_document:
     variant: markdown_github
 ---
 
@@ -11,9 +10,13 @@ knitr::opts_chunk$set(include=TRUE, echo = FALSE)
 
 <a id="devex-badge" rel="Exploration" href="https://github.com/BCDevExchange/assets/blob/master/README.md"><img alt="Being designed and built, but in the lab. May change, disappear, or be buggy." style="border-width:0" src="https://assets.bcdevexchange.org/images/badges/exploration.svg" title="Being designed and built, but in the lab. May change, disappear, or be buggy." /></a>
 
-# Bowron Watershed Stream Temperature Modelling \n[openSTARS implementation]
+# Bowron Watershed Stream Temperature Modelling 
 
-This repository is preliminary workflow to model stream temperatures using [openSTARS](https://github.com/MiKatt/openSTARS) (an open source implementation of [STARS](https://www.fs.fed.us/rm/boise/AWAE/projects/SSN_STARS/software_data.html)) and [ssn](https://cran.r-project.org/web/packages/SSN/index.html).
+This project builds on [bowron-ssn](https://github.com/bcgov/bowron-ssn) and seeks to be a fully open source implementation.
+
+### openSTARS and SSN 
+
+This repository is preliminary R language workflow to model stream temperatures using [openSTARS](https://github.com/MiKatt/openSTARS) (an open source implementation of [STARS](https://www.fs.fed.us/rm/boise/AWAE/projects/SSN_STARS/software_data.html)) and [ssn](https://cran.r-project.org/web/packages/SSN/index.html). 
 
 ### Preliminary Field Data
 
